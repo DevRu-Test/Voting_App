@@ -98,7 +98,7 @@ def admin_logged_in() -> bool:
 
 def admin_login_ui():
     st.subheader("管理者登入")
-    key = st.text_input("請輸入管理者金鑰（由中台提供，環境變數 APP_ADMIN_KEY）", type="password")
+    key = st.text_input("請輸入管理者金鑰", type="password")
     if st.button("登入管理者"):
         if ADMIN_KEY and key == ADMIN_KEY:
             st.session_state["is_admin"] = True
@@ -231,7 +231,7 @@ def get_existing_votes(voter_id: int, community_id: int) -> dict:
 
 # 取代原本的 page_vote()
 def page_vote():
-    st.title("🗳️ 使用者投票")
+    st.title("🗳️ 社區投票")
     # nav_links()
     voting_open, _ = get_settings()
 
@@ -363,7 +363,7 @@ def page_results():
 # 🛠️ 頁面：管理者
 # ========================
 def page_admin():
-    st.title("🛠️ 管理者頁")
+    st.title("🛠️ 投票管理")
     # nav_links()
 
     if not admin_logged_in():
