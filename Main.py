@@ -232,7 +232,7 @@ def get_existing_votes(voter_id: int, community_id: int) -> dict:
 # 取代原本的 page_vote()
 def page_vote():
     st.title("🗳️ 使用者投票")
-    nav_links()
+    # nav_links()
     voting_open, _ = get_settings()
 
     require_token_login()  # token 驗證（未登入會 st.stop()）
@@ -308,7 +308,7 @@ def page_vote():
 # ========================
 def page_results():
     st.title("📊 投票結果")
-    nav_links()
+    # nav_links()
     _, results_open = get_settings()
 
     require_token_login()
@@ -364,7 +364,7 @@ def page_results():
 # ========================
 def page_admin():
     st.title("🛠️ 管理者頁")
-    nav_links()
+    # nav_links()
 
     if not admin_logged_in():
         admin_login_ui()
